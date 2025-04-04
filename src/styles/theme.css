@@ -1,0 +1,27 @@
+/* Tema global de We-Connect */
+
+/* Definición de colores */
+:root {
+    --color-amarillo: #FFCC00; /* Amarillo */
+    --color-negro: #000000;   /* Negro */
+    --color-blanco: #FFFFFF;  /* Blanco */
+  }
+  
+  /* Estilos globales */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4 {
+    color: var(--color-negro);
+  }
+  
+  a {
+    color: var(--color-amarillo);
+    text-decoration: none;
+  }
+  

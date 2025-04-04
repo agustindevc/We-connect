@@ -1,0 +1,30 @@
+/* Estilos para la página Product */
+.product {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: var(--color-negro);
+  }
+  
+  /* Estilos para los enlaces de navegación */
+  .links {
+    margin-top: 20px;
+  }
+  
+  .go-to-dashboard-link,
+  .go-to-profile-link {
+    display: block;
+    margin-top: 20px;
+    color: var(--color-amarillo);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .go-to-dashboard-link:hover,
+  .go-to-profile-link:hover {
+    color: var(--color-negro);
+  }
+  
