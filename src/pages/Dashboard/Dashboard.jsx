@@ -9,8 +9,8 @@ const Dashboard = () => {
       <button className="add-product-btn">Agregar Producto</button>
 
       <div className="links">
-        <Link to="/profile" className="go-to-profile-link">Ir a perfil de usuario</Link> {/*Lleva a la pagina que muestra los detalles del producto publicado*/}
-        <Link to="/product" className="go-to-product-link">Producto/s</Link> {/*Lleva a la pagina que muestra los detalles del producto publicado*/}
+        <Link to="/profile" className="link-perfil-usuario">Ir a perfil de usuario</Link> {/*Lleva a la pagina que muestra los detalles del producto publicado*/}
+        <Link to="/product" className="link-producto">Producto/s</Link> {/*Lleva a la pagina que muestra los detalles del producto publicado*/}
       </div>
     </div>
   );
