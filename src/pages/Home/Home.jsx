@@ -1,17 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";  // Importa el Link de React Router
-import "./Home.css"; // Importa los estilos específicos
+import React from 'react';
+import Header from '../../components/Header';
+import HeroSection from '../../components/HeroSection';
+import AboutSection from '../../components/AboutSection';
+import FeaturesSection from '../../components/FeaturesSection';
+import TestimonialsSection from '../../components/TestimonialsSection';
+import ContactSection from '../../components/ContactSection';
+import Footer from '../../components/Footer';
 
 const Home = () => {
   return (
-    <div className="home">
-      <h1>Bienvenidos a We-Connect</h1>
-      <p>comunidad de emprendedores</p>
-      <button className="cta-btn">Únete ahora</button>
-
-      <div className="links">
-        <Link to="/dashboard" className="link-iniciar-sesion">iniciar sesion (demo)</Link> {/*lleva a la pagina principal de usuario registrado*/}
-      </div>
+    <div>
+      <Header />
+      <HeroSection />
+      <AboutSection />
+      <FeaturesSection />
+      <TestimonialsSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 };
