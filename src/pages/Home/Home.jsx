@@ -6,12 +6,11 @@ const Home = () => {
   return (
     <div className="home">
       <h1>Bienvenidos a We-Connect</h1>
-      <p>Una comunidad para emprendedores que se apoyan mutuamente.</p>
+      <p>comunidad de emprendedores</p>
       <button className="cta-btn">Únete ahora</button>
 
       <div className="links">
-        <Link to="/dashboard" className="go-to-dashboard-link">Ir al Dashboard</Link>
-        <Link to="/profile" className="go-to-profile-link">Ver perfil</Link>
+        <Link to="/dashboard" className="link-iniciar-sesion">iniciar sesion (demo)</Link> {/*lleva a la pagina principal de usuario registrado*/}
       </div>
     </div>
   );

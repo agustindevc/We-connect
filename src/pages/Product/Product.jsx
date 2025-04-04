@@ -9,8 +9,8 @@ const Product = () => {
       <p>Aquí se muestra un producto que un emprendedor ha publicado.</p>
 
       <div className="links">
-        <Link to="/dashboard" className="go-to-dashboard-link">Ir al Dashboard</Link>
-        <Link to="/profile" className="go-to-profile-link">Ver Perfil</Link>
+        <Link to="/dashboard" className="link-pagina-principal">Volver</Link>
+        <Link to="/profile" className="link-a-perfil">Ver Perfil</Link>
       </div>
     </div>
   );
