@@ -1,4 +1,11 @@
 /* Estilos para la página Product */
+html, body {
+  width: 100%;
+  height: auto; /* Asegura que el body ocupe todo el alto de la pantalla */
+  text-align: center;
+  padding: 20px;
+}
+
 .product {
     text-align: center;
     padding: 20px;

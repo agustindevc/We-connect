@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";  // Importa el Link de React Router
 import "./Dashboard.css"; // Importa los estilos específicos
+import Header from "../../components/Header";
 
 const Dashboard = () => {
   return (

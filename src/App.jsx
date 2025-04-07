@@ -5,13 +5,15 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Profile from "./pages/Profile/Profile";
 import Product from "./pages/Product/Product";
 import "./styles/theme.css";
+import Login from "./pages/Login/Login";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <BrowserRouter basename="/We-connect">
       <div className="main-container">
-        {/* Header común (opcional) */}
-        {/* <header>Navbar</header> */}
+        <Header></Header>
 
         <main className="main-content">
           <Routes>
@@ -19,11 +21,11 @@ const App = () => {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/product" element={<Product />} />
+            <Route path="/Login" element={<Login />} />
           </Routes>
         </main>
 
-        {/* Footer común (opcional) */}
-        {/* <footer>Footer</footer> */}
+        <Footer></Footer>
       </div>
     </BrowserRouter>
   );
