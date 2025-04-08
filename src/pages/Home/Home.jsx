@@ -5,11 +5,13 @@ import AboutSection from './HomeComponents/AboutSection';
 import FeaturesSection from './HomeComponents/FeaturesSection';
 import TestimonialsSection from './HomeComponents/TestimonialsSection';
 import ContactSection from './HomeComponents/ContactSection';
-import Footer from '../../components/Footer';
+import Navbar from '../../components/NavBar';
 
 const Home = () => {
   return (
     <div>
+      <Header />
+      <Navbar />
       <HeroSection />
       <AboutSection />
       <FeaturesSection />

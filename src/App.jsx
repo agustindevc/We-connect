@@ -13,8 +13,6 @@ const App = () => {
   return (
     <BrowserRouter basename="/We-connect">
       <div className="main-container">
-        <Header></Header>
-
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />

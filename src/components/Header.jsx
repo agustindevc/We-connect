@@ -5,6 +5,7 @@ import Menu from '../pages/Home/HomeComponents/Menu';
 const Header = () => {
   return (
     <header style={{
+      width: "100%",
       backgroundColor: '#000',
       color: '#ffffff',
       padding: '20px',
@@ -13,10 +14,6 @@ const Header = () => {
       alignItems: 'center'
     }}>
       <h1 style={{ margin: 0, color: '#ffffff' }}>We-Connect</h1>
-      <Navbar>
-        <Menu style={{ listStyle: 'none', display: 'flex', justifyContent: 'center' }}/>
-        
-      </Navbar>
       
     </header>
   );
