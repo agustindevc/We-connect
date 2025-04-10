@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";  // Importa el Link de React Router
-import "./Product.css"; // Importa los estilos específicos
+import { Link } from "react-router-dom";
+import "./Product.css";
 
 const Product = () => {
   return (
@@ -10,7 +10,7 @@ const Product = () => {
 
       <div className="links">
         <Link to="/dashboard" className="link-pagina-principal">Volver</Link>
-        <Link to="/profile" className="link-a-perfil">Ver Perfil</Link>
+        <Link to="/dashboard/profile" className="link-a-perfil">Ver Perfil</Link>
       </div>
     </div>
   );
