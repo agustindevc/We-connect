@@ -1,17 +1,36 @@
 import React, { useState } from 'react';
 import './Login.css';
+import axios from 'axios'; // npm install axios
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Aquí va tu lógica de login
-    console.log('Email:', email, 'Password:', password);
+    //Si quieres lo comentas
+    try {
+      const response = await axios.post(
+        'https://tudominio.com/backend/login.php', // URL de tu endpoint PHP
+        {
+          email: email,
+          password: password
+        }
+      );
+      
+      // Si el login es exitoso
+      alert(response.data.message);
+      // Aquí guardarías el token de autenticación o redirigirías
+      // Ejemplo: localStorage.setItem('token', response.data.token);
+      // Ejemplo de redirección: window.location.href = '/home';
+      
+    } catch (error) {
+      alert(error.response?.data?.error || "Error desconocido");
+    }
   };
 
-  console.log("Componente Login renderizado");  // Esto debería aparecer en la consola si el componente se está renderizando.
+  // console.log("Componente Login renderizado");  // Esto debería aparecer en la consola si el componente se está renderizando.
 
   return (
     <div className="login-container">
