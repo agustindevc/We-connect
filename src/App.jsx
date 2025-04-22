@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Profile from "./pages/Profile/Profile";
 import Product from "./pages/Product/Product";
 import "./styles/theme.css";
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
 import Login from "./pages/Login/Login";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -22,7 +23,7 @@ const App = () => {
             <Route path="/Login" element={<Login />} />
           </Routes>
         </main>
-
+<ScrollToTopButton></ScrollToTopButton>
         <Footer></Footer>
       </div>
     </BrowserRouter>
