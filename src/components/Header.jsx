@@ -14,7 +14,7 @@ const Header = () => {
       alignItems: 'center'
     }}>
       <h1 style={{ margin: 0, color: '#ffffff' }}>We-Connect</h1>
-      
+      <Menu style={{ display: 'flex', listStyle: 'none', padding: 0, margin: 0 }} />
     </header>
   );
 };

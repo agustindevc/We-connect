@@ -7,8 +7,25 @@
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  max-width: 100%; 
+  overflow: hidden; 
 }
 
 a {
@@ -20,16 +37,14 @@ a:hover {
   color: #535bf2;
 }
 
-/* MODIFICACIONES PRINCIPALES */
 body {
-  margin: 0;
   min-width: 320px;
   min-height: 100vh;
   display: block;
-  overflow: hidden;
+  overflow-x: hidden; 
+  overflow-y: auto; 
 }
 
-/* Contenedor principal mejorado */
 .main-container {
   width: 100%;
   min-height: 100vh;
@@ -37,30 +52,30 @@ body {
   flex-direction: column;
   align-items: stretch;
   box-sizing: border-box;
-  padding: 0; /* Elimina padding */
-  margin: 0; /* Elimina margen */
+  padding: 0;
+  margin: 0;
 }
 
 header {
   width: 100%;
   flex-shrink: 0;
-  padding: 0; /* Elimina padding */
-  margin: 0; /* Elimina margen */
+  padding: 0;
+  margin: 0;
 }
 
-/* Contenido principal con box-sizing */
 .main-content {
   flex-grow: 1;
   width: 100%;
   box-sizing: border-box;
-  margin: 0; /* Elimina margen */
+  margin: 0;
+  max-width: 100%;
 }
 
 h1 {
   font-size: clamp(2.5rem, 5vw, 3.2em);
   line-height: 1.1;
-  margin: 0; /* Elimina margen por defecto */
-  padding: 0; /* Elimina padding */
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -73,7 +88,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin: 0; /* Elimina margen */
+  margin: 0;
 }
 button:hover {
   border-color: #646cff;

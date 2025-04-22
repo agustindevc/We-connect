@@ -4,7 +4,7 @@ const FeaturesSection = () => {
   return (
     <section id="features" style={{ backgroundColor: '#000', color: '#FFF', padding: '50px 20px' }}>
       <h2>¿Por qué elegir We-Connect?</h2>
-      <ul>
+      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
         <li>Conexión directa entre emprendedores</li>
         <li>Plataforma fácil de usar</li>
         <li>Oportunidades para crecimiento mutuo</li>

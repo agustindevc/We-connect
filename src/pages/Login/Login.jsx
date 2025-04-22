@@ -4,19 +4,42 @@ import './Login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí va tu lógica de login
-    console.log('Email:', email, 'Password:', password);
-  };
+    setError('');
+    setSuccess(false);
 
-  console.log("Componente Login renderizado");  // Esto debería aparecer en la consola si el componente se está renderizando.
+    try {
+      const response = await fetch('http://localhost/we-connect/backend/login.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSuccess(true);
+        window.location.href = '/home';
+      } else {
+        setError(data.message);
+      }
+    } catch (err) {
+      setError('Error al conectar con el servidor');
+    }
+  };
 
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Iniciar sesión</h2>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {success && <p style={{ color: 'green' }}>Inicio de sesión exitoso</p>}
         <label htmlFor="email">Correo electrónico</label>
         <input
           type="email"
@@ -25,7 +48,6 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-
         <label htmlFor="password">Contraseña</label>
         <input
           type="password"
@@ -34,8 +56,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-
-        <button type="submit" link to="./Home">Entrar</button>
+        <button type="submit">Entrar</button>
       </form>
     </div>
   );

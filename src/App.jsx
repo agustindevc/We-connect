@@ -7,7 +7,7 @@ import Product from "./pages/Product/Product";
 import "./styles/theme.css";
 import Login from "./pages/Login/Login";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const App = () => {
   return (
@@ -23,6 +23,7 @@ const App = () => {
           </Routes>
         </main>
 
+        <ScrollToTopButton />
         <Footer></Footer>
       </div>
     </BrowserRouter>

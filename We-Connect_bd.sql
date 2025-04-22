@@ -64,6 +64,8 @@ CREATE TABLE producto_servicio (
     FOREIGN KEY (id_oferente) REFERENCES usuario(id_usuario)
 );
 
+ALTER TABLE producto_servicio ADD INDEX (id_categoria);
+ALTER TABLE producto_servicio ADD INDEX (id_oferente);
 
 CREATE TABLE oferta (
     id_oferta INT AUTO_INCREMENT PRIMARY KEY,
@@ -84,7 +86,7 @@ CREATE TABLE valoracion (
     comentario TEXT,
 	fecha_agregado TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_producto_servicio) REFERENCES producto_servicio(id_producto_servicio),
-    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario) ON DELETE CASCADE
 );
 
 CREATE TABLE chat (
@@ -128,6 +130,4 @@ CREATE TABLE notificacion (
 );
 
 
-drop table categoria, usuario, valoracion, producto, servicio, oferta;
-drop table categoria, producto, servicio, oferta, usuario;
-drop table transaccion;
+DROP TABLE notificacion, pago, transaccion, chat, valoracion, oferta, producto_servicio, categoria, usuario;
