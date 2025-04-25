@@ -1,18 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";  // Importa el Link de React Router
-import "./Dashboard.css"; // Importa los estilos específicos
-import Header from "../../components/Header";
+import { Link } from "react-router-dom";
+import "./Dashboard.css";
 
 const Dashboard = () => {
   return (
     <div className="dashboard">
-      <Header></Header>
       <h1>Pagina de inicio de usuario registrado</h1>
-      <button className="add-product-btn">Agregar Producto</button>
+      <Link to="/AddProduct" className="add-product-btn">Agregar Producto</Link>
 
       <div className="links">
-        <Link to="/profile" className="link-perfil-usuario">Ir a perfil de usuario</Link> {/*Lleva a la pagina que muestra los detalles del producto publicado*/}
-        <Link to="/product" className="link-producto">Producto/s</Link> {/*Lleva a la pagina que muestra los detalles del producto publicado*/}
+        <Link to="/profile" className="link-perfil-usuario">Ir a perfil de usuario</Link>
+        <Link to="/Product" className="link-producto">Producto/s</Link>
       </div>
     </div>
   );
