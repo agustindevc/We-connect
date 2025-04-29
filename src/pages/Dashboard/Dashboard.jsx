@@ -1,17 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Dashboard.css";
+import React, { useState } from "react";
+import SearchBar from "./DashboardComponents/SearchBar";
+import FeaturedProducts from "./DashboardComponents/FeaturedProducts";
 
 const Dashboard = () => {
-  return (
-    <div className="dashboard">
-      <h1>Pagina de inicio de usuario registrado</h1>
-      <Link to="/AddProduct" className="add-product-btn">Agregar Producto</Link>
+  const [search, setSearch] = useState("");
 
-      <div className="links">
-        <Link to="/profile" className="link-perfil-usuario">Ir a perfil de usuario</Link>
-        <Link to="/Product" className="link-producto">Producto/s</Link>
-      </div>
+  return (
+    <div
+      style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "20px",
+      }}
+    >
+      <SearchBar search={search} setSearch={setSearch} />
+      <FeaturedProducts search={search} />
     </div>
   );
 };

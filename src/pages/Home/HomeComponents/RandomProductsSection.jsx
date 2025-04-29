@@ -1,40 +1,66 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useRef } from 'react';
 
 const RandomProductsSection = () => {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  
+  const productsPerPage = 5;
+  const sliderRef = useRef(null);
+
   useEffect(() => {
-    // Aquí deberás hacer la llamada a tu API para obtener productos aleatorios
-    // Este es un ejemplo de estructura de datos
-    const mockProducts = [
-      { id: 1, name: 'Producto 1', description: 'Descripción 1', image: 'url1' },
-      { id: 2, name: 'Producto 2', description: 'Descripción 2', image: 'url2' },
-      // ... más productos
-    ];
+    // Simulación de productos desde backend
+    const mockProducts = Array.from({ length: 15 }, (_, i) => ({
+      id: i + 1,
+      name: `Producto ${i + 1}`,
+      description: `Descripción ${i + 1}`,
+      image: `https://via.placeholder.com/220x200?text=Producto+${i + 1}`
+    }));
     setProducts(mockProducts);
   }, []);
+
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  // Auto-advance
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPage(prev => (prev + 1) % totalPages);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [totalPages]);
 
   const containerStyle = {
     padding: '50px 20px',
     backgroundColor: '#f5f5f5'
   };
 
-  const carouselStyle = {
+  const carouselWrapperStyle = {
+    overflow: 'hidden',
+    width: '100%',
+    position: 'relative'
+  };
+
+  const sliderStyle = {
+    display: 'flex',
+    width: `${100 * totalPages}%`,
+    transform: `translateX(-${(100 / totalPages) * currentPage}%)`,
+    transition: 'transform 0.6s ease-in-out'
+  };
+
+  const slideStyle = {
+    width: `${100 / totalPages}%`,
     display: 'flex',
     justifyContent: 'center',
     gap: '15px',
-    margin: '20px 0',
-    flexWrap: 'wrap'
+    boxSizing: 'border-box',
+    padding: '20px 0'
   };
 
   const productCardStyle = {
     width: '220px',
-    padding: '15px',
     backgroundColor: 'white',
+    padding: '15px',
     borderRadius: '8px',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    flexShrink: 0
   };
 
   const imageStyle = {
@@ -59,39 +85,47 @@ const RandomProductsSection = () => {
     cursor: 'pointer'
   };
 
-  const productsPerPage = 5;  // Cambiado de 3 a 5
-  const totalPages = Math.ceil(products.length / productsPerPage);
-
-  const getCurrentPageProducts = () => {
-    const start = currentPage * productsPerPage;
-    return products.slice(start, start + productsPerPage);
+  const getSlides = () => {
+    const slides = [];
+    for (let i = 0; i < totalPages; i++) {
+      const group = products.slice(i * productsPerPage, (i + 1) * productsPerPage);
+      slides.push(
+        <div key={i} style={slideStyle}>
+          {group.map(product => (
+            <div key={product.id} style={productCardStyle}>
+              <img src={product.image} alt={product.name} style={imageStyle} />
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+            </div>
+          ))}
+        </div>
+      );
+    }
+    return slides;
   };
 
   return (
     <section style={containerStyle}>
-      <h2>Productos Destacados</h2>
-      <div style={carouselStyle}>
-        {getCurrentPageProducts().map(product => (
-          <div key={product.id} style={productCardStyle}>
-            <img src={product.image} alt={product.name} style={imageStyle} />
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-          </div>
-        ))}
+      <h2 style={{ textAlign: 'center' }}>Productos Destacados</h2>
+
+      <div style={carouselWrapperStyle}>
+        <div style={sliderStyle} ref={sliderRef}>
+          {getSlides()}
+        </div>
       </div>
+
       <div style={navigationStyle}>
-        <button 
+        <button
           style={buttonStyle}
-          onClick={() => setCurrentPage(prev => prev > 0 ? prev - 1 : prev)}
+          onClick={() => setCurrentPage(prev => (prev > 0 ? prev - 1 : 0))}
           disabled={currentPage === 0}
         >
           Anterior
         </button>
         <span>{currentPage + 1} de {totalPages}</span>
-        <button 
+        <button
           style={buttonStyle}
-          onClick={() => setCurrentPage(prev => prev < totalPages - 1 ? prev + 1 : prev)}
-          disabled={currentPage === totalPages - 1}
+          onClick={() => setCurrentPage(prev => (prev + 1) % totalPages)}
         >
           Siguiente
         </button>
