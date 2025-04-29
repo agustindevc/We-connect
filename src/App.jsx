@@ -6,7 +6,7 @@ import Profile from "./pages/Profile/Profile";
 import Product from "./pages/Product/Product";
 import AddProduct from "./pages/AddProduct/AddProduct";
 import "./styles/theme.css";
-import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Footer from "./components/Footer";

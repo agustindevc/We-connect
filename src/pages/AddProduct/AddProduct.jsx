@@ -113,7 +113,7 @@ const AddProduct = () => {
 
   return (
     <Container>
-      <Title>Agregar Nuevo Producto o Servicio</Title>
+      <Title>Agregar Producto o Servicio</Title>
       
       <Form onSubmit={handleSubmit}>
         <FormGroup>
