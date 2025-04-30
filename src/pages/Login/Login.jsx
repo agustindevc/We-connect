@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios'; // npm install axios
 
@@ -54,7 +55,10 @@ const Login = () => {
           required
         />
 
-        <button type="submit" link to="./Home">Entrar</button>
+        <button type="submit">Entrar</button>
+        <div className="register-link">
+          <Link to="/Register">¿No tienes una cuenta? Regístrate aquí</Link>
+        </div>
       </form>
     </div>
   );

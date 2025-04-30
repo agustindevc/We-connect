@@ -13,7 +13,7 @@ const HeroSection = () => {
       <h2>Bienvenidos a We-Connect</h2>
       <p>Conectamos emprendedores para colaborar y crecer juntos.</p>
       <button onClick={handleClick} style={{ padding: '10px 20px', backgroundColor: '#000', color: '#FFF' }}>
-        Únete a la comunidad
+        Únete a la comunidad (demo de inicio de sesion)
       </button>
     </section>
   );

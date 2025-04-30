@@ -1,18 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom";  // Importa el Link de React Router
-import "./Profile.css";
-import Header from "../../components/Header";
+import ProfileHeader from "./ProfileComponents/ProfileHeader";
+import ProductList from "./ProfileComponents/ProductList";
 
 const Profile = () => {
-  return (
-    <div className="profile">
-      <h1>Mi Perfil</h1>
-      <p>Aquí puedes editar tu perfil y ver tu información personal.</p>
+  const styles = {
+    page: {
+      width: "100%",
+      height: "auto",
+      padding: "20px",
+      boxSizing: "border-box",
+    },
+    heading: {
+      color: "var(--color-negro)",
+    },
+  };
 
-      <div className="links">
-        <Link to="/dashboard" className="go-to-dashboard-link">Ir al Dashboard</Link>
-        <Link to="/product" className="go-to-product-link">Ver Producto</Link>
-      </div>
+  //obtener datos de la de la base de datos
+  const profileData = {
+    image: "https://via.placeholder.com/150", // Aquí colocarás la imagen del perfil o logo
+    name: "Tienda Camisetas",
+    description: "Diseñamos camisetas personalizadas",
+    city: "Málaga",
+    category: "Indumentaria",
+    products: [
+      { id: 1, title: "Camiseta Logo", description: "Camiseta con logo estampado" },
+      { id: 2, title: "Camiseta Personalizada", description: "Diseña tu propia camiseta" },
+    ],
+  };
+
+  const isOwner = true; // Puedes usar lógica de autenticación para determinar si el usuario es el propietario
+
+  return (
+    <div style={styles.page}>
+      <h1 style={styles.heading}>Perfil de Usuario</h1>
+      <ProfileHeader profile={profileData} isOwner={isOwner} />
+      <ProductList products={profileData.products} />
     </div>
   );
 };

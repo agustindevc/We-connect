@@ -1,19 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";  // Importa el Link de React Router
-import "./Dashboard.css"; // Importa los estilos específicos
-import Header from "../../components/Header";
+import React, { useState } from "react";
+import SearchBar from "./DashboardComponents/SearchBar";
+import FeaturedProducts from "./DashboardComponents/FeaturedProducts";
 
 const Dashboard = () => {
-  return (
-    <div className="dashboard">
-      <Header></Header>
-      <h1>Pagina de inicio de usuario registrado</h1>
-      <button className="add-product-btn">Agregar Producto</button>
+  const [search, setSearch] = useState("");
 
-      <div className="links">
-        <Link to="/profile" className="link-perfil-usuario">Ir a perfil de usuario</Link> {/*Lleva a la pagina que muestra los detalles del producto publicado*/}
-        <Link to="/product" className="link-producto">Producto/s</Link> {/*Lleva a la pagina que muestra los detalles del producto publicado*/}
-      </div>
+  return (
+    <div
+      style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "20px",
+      }}
+    >
+      <SearchBar search={search} setSearch={setSearch} />
+      <FeaturedProducts search={search} />
     </div>
   );
 };
