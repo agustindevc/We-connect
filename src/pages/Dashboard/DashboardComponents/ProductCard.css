@@ -1,0 +1,46 @@
+/* src/pages/Dashboard/DashboardComponents/ProductCard.css */
+.product-card {
+    background-color: var(--color-fondo-oscuro-elemento); /* Fondo oscuro para las tarjetas */
+    border: 1px solid var(--color-borde-input); /* Borde sutil */
+    border-radius: 10px; /* Bordes más redondeados */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra más notable */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px); /* Ligeramente elevado al pasar el ratón */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Sombra más fuerte al pasar el ratón */
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .product-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .product-title {
+    font-size: 1.1rem; /* Ligeramente más grande */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Color casi negro para el título */
+  }
+  
+  .product-description {
+    font-size: 0.9rem;
+    color: #555; /* Gris más oscuro para la descripción */
+  }
+  .product-title {
+    /* ... otros estilos ... */
+    color: var(--color-texto-titulo-oscuro);
+  }
+  
+  .product-description {
+    /* ... otros estilos ... */
+    color: var(--color-texto-descripcion-oscuro);
+  }

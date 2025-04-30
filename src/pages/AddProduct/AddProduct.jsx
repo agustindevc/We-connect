@@ -1,80 +1,116 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Header from "../../components/Header";
+import Header from "../../components/Header"; // Asegúrate de que la ruta sea correcta
 
-// Estilos con styled-components
 const Container = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: calc(100vh - 60px); /* Ocupa la altura de la ventana menos la altura del header */
+  padding: 30px;
+  background-color: var(--color-fondo-principal); /* Fondo oscuro de la página */
 `;
 
 const Form = styled.form`
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-fondo-formulario);
+  padding: 40px;
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  width: 100%;
+  max-width: 600px; /* Ancho máximo para que no se vea demasiado ancho */
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  margin-bottom: 40px; /* Más espacio debajo del título */
+  color: var(--color-texto-titulo);
+  font-size: 2.2rem; /* Título más grande */
 `;
 
 const FormGroup = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 `;
 
 const Label = styled.label`
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-weight: bold;
+  color: var(--color-texto-etiqueta);
+  font-size: 1.1rem; /* Etiquetas un poco más grandes */
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
+  padding: 14px; /* Padding más grande */
+  border: 1px solid var(--color-borde-input);
+  border-radius: 6px; /* Bordes más redondeados */
+  font-size: 1.1rem; /* Texto de entrada más grande */
+  color: var(--color-texto-input);
+  background-color: var(--color-fondo-input);
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-foco);
+    box-shadow: 0 0 0 0.2rem rgba(var(--color-foco-rgb), 0.25);
+  }
 `;
 
 const TextArea = styled.textarea`
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  min-height: 100px;
+  padding: 14px; /* Padding más grande */
+  border: 1px solid var(--color-borde-input);
+  border-radius: 6px; /* Bordes más redondeados */
+  font-size: 1.1rem; /* Texto del área más grande */
+  min-height: 150px; /* Área de texto más alta */
   resize: vertical;
+  color: var(--color-texto-input);
+  background-color: var(--color-fondo-input);
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-foco);
+    box-shadow: 0 0 0 0.2rem rgba(var(--color-foco-rgb), 0.25);
+  }
 `;
 
 const Select = styled.select`
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
+  padding: 14px; /* Padding más grande */
+  border: 1px solid var(--color-borde-input);
+  border-radius: 6px; /* Bordes más redondeados */
+  font-size: 1.1rem; /* Texto de selección más grande */
+  color: var(--color-texto-input);
+  background-color: var(--color-fondo-input);
 `;
 
 const FileInput = styled.input`
   border: none;
   padding: 10px 0;
+  font-size: 1.1rem; /* Texto de selección de archivo más grande */
+  color: var(--color-texto-input);
 `;
 
 const SubmitButton = styled.button`
-  background-color: #007bff;
-  color: white;
-  padding: 12px 24px;
+  background-color: var(--color-boton-principal);
+  color: var(--color-texto-boton);
+  padding: 16px 32px; /* Padding más grande */
   border: none;
-  border-radius: 4px;
+  border-radius: 8px; /* Bordes más redondeados */
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.2rem; /* Texto del botón más grande */
   width: 100%;
+  transition: background-color 0.2s ease-in-out;
+  font-weight: bold; /* Texto del botón en negrita */
 
   &:hover {
-    background-color: #0056b3;
+    background-color: var(--color-boton-hover);
   }
 `;
 
-const Title = styled.h1`
-  text-align: center;
-  margin-bottom: 30px;
+const RequiredAsterisk = styled.span`
+  color: #e53e3e;
+  margin-left: 4px;
+  font-size: 1.1rem; /* Asterisco más grande */
 `;
 
 const AddProduct = () => {
@@ -109,15 +145,18 @@ const AddProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    // Aquí iría la lógica para enviar los datos del formulario
   };
 
   return (
     <Container>
-      <Title>Agregar Producto o Servicio</Title>
-      
-      <Form onSubmit={handleSubmit}>
+      <Form>
+        <Title>Agregar Producto o Servicio</Title>
+
         <FormGroup>
-          <Label htmlFor="nombre">Nombre del Producto/Servicio *</Label>
+          <Label htmlFor="nombre">
+            Nombre del Producto/Servicio <RequiredAsterisk>*</RequiredAsterisk>
+          </Label>
           <Input
             type="text"
             id="nombre"
@@ -129,7 +168,9 @@ const AddProduct = () => {
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="tipo">Tipo *</Label>
+          <Label htmlFor="tipo">
+            Tipo <RequiredAsterisk>*</RequiredAsterisk>
+          </Label>
           <Select
             id="tipo"
             name="tipo"
@@ -143,7 +184,9 @@ const AddProduct = () => {
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="categoria">Categoría *</Label>
+          <Label htmlFor="categoria">
+            Categoría <RequiredAsterisk>*</RequiredAsterisk>
+          </Label>
           <Select
             id="categoria"
             name="categoria"
@@ -161,7 +204,9 @@ const AddProduct = () => {
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="descripcion">Descripción *</Label>
+          <Label htmlFor="descripcion">
+            Descripción <RequiredAsterisk>*</RequiredAsterisk>
+          </Label>
           <TextArea
             id="descripcion"
             name="descripcion"
@@ -172,7 +217,9 @@ const AddProduct = () => {
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="precio">Precio *</Label>
+          <Label htmlFor="precio">
+            Precio <RequiredAsterisk>*</RequiredAsterisk>
+          </Label>
           <Input
             type="number"
             id="precio"

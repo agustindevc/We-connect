@@ -1,27 +1,63 @@
-/* Tema global de We-Connect */
+/* Tema global de We-Connect - Tonos Amarillos y Pasteles */
 
 /* Definición de colores */
 :root {
-    --color-amarillo: #FFCC00; /* Amarillo */
-    --color-negro: #000000;   /* Negro */
-    --color-blanco: #FFFFFF;  /* Blanco */
-  }
-  
-  /* Estilos globales */
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--color-blanco);
-    color: var(--color-negro);
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1, h2, h3, h4 {
-    color: var(--color-negro);
-  }
-  
-  a {
-    color: var(--color-amarillo);
-    text-decoration: none;
-  }
-  
+  --color-primario: #FFD700;       /* Amarillo dorado principal */
+  --color-secundario: #F0E68C;    /* Amarillo pálido secundario */
+  --color-terciario: #EEE8AA;     /* Amarillo claro terciario */
+  --color-pastel-uno: #FFFACD;     /* Amarillo pastel suave (Lemon Chiffon) */
+  --color-pastel-dos: #FAF0E6;     /* Beige pastel suave (Linen) */
+  --color-texto-principal: #333333; /* Gris oscuro para el texto principal */
+  --color-texto-secundario: #555555; /* Gris más claro para texto secundario */
+  --color-fondo-principal: var(--color-pastel-dos); /* Fondo general de la página */
+  --color-fondo-formulario: var(--color-blanco); /* Fondo de los formularios */
+  --color-borde-input: #CCCCCC;    /* Borde de los inputs */
+  --color-texto-input: var(--color-texto-principal); /* Texto dentro de los inputs */
+  --color-fondo-input: var(--color-blanco); /* Fondo de los inputs */
+  --color-foco: var(--color-primario); /* Color de foco (por ejemplo, al seleccionar un input) */
+  --color-foco-rgb: 255, 215, 0;   /* Valor RGB del color de foco */
+  --color-boton-principal: var(--color-primario); /* Color principal de los botones */
+  --color-texto-boton: var(--color-blanco); /* Texto de los botones principales */
+  --color-boton-hover: #EEC900;     /* Color de los botones al pasar el ratón */
+  --color-texto-titulo: var(--color-texto-principal); /* Color de los títulos */
+  --color-texto-etiqueta: var(--color-texto-secundario); /* Color de las etiquetas de formulario */
+  --color-fondo-header: var(--color-pastel-uno); /* Fondo del encabezado */
+  --color-texto-header: var(--color-texto-principal); /* Texto del encabezado */
+  --color-fondo-footer: var(--color-pastel-uno); /* Fondo del pie de página */
+  --color-texto-footer: var(--color-texto-secundario); /* Texto del pie de página */
+}
+
+/* Estilos globales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--color-fondo-principal);
+  color: var(--color-texto-principal);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-texto-principal);
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para el contenedor principal */
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}

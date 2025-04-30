@@ -1,0 +1,46 @@
+/* src/pages/Dashboard/DashboardComponents/SearchBar.css */
+.search-bar-container {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px; /* Añadido margen inferior para separarlo del contenido */
+  }
+  
+  .search-input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: rgb(114, 114, 114); /* Fondo oscuro para la barra */
+    border-radius: 5px; /* Bordes menos redondeados */
+    border: 1px solid var(--color-borde-input); /* Borde visible */
+    padding: 10px 15px; /* Ajuste del padding */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Un poco más estrecho */
+    margin: 0 auto;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .search-input-wrapper.focused {
+    border-color: var(--color-primario); /* Resaltar el borde al enfocar */
+    box-shadow: 0 3px 8px rgba(var(--color-primario-rgb, 74, 85, 104), 0.3); /* Sombra con el color primario */
+  }
+  
+  .search-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-neutro-claro); /* Icono claro para contrastar con el fondo oscuro */
+    margin-right: 10px;
+  }
+  
+  .search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 8px 0; /* Menos padding vertical */
+    font-size: 1rem;
+    color: var(--color-neutro-claro); /* Texto claro */
+    background-color: transparent;
+  }
+  
+  .search-input::placeholder {
+    color: var(--color-neutro-oscuro); /* Placeholder en gris más oscuro */
+  }

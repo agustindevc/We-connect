@@ -5,8 +5,14 @@ html, body {
   padding: 0 !important;
   border: 0 !important;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1E293B; /* Fondo principal metálico */
+  color: #E2E8F0; /* Texto principal claro metálico */
+  line-height: 1.6;
 }
 
 #root {
@@ -14,7 +20,6 @@ html, body {
   display: flex;
   flex-direction: column;
 }
-
 
 .main-container {
   min-height: 100vh;
@@ -26,41 +31,159 @@ html, body {
   padding: 0;
 }
 
-
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-a { font-weight: 500; color: #646cff; text-decoration: inherit; }
-a:hover { color: #535bf2; }
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #CBD5E0;
+}
 
-header { width: 100%; flex-shrink: 0; padding: 0; margin: 0; }
-.main-content { flex-grow: 1; width: 100%; margin: 0; padding:0; }
-img, video { max-width: 100%; height: auto; display: block; }
-h1 { font-size: clamp(2rem, 6vw, 3.2em); line-height: 1.1; margin: 0 0 1rem 0; padding: 0; }
-button { border-radius: 8px; border: 1px solid transparent; padding: 0.6em 1.2em; font-size: 1em; font-weight: 500; font-family: inherit; background-color: #1a1a1a; cursor: pointer; transition: border-color 0.25s, background-color 0.25s; }
-button:hover { border-color: #646cff; }
-button:focus, button:focus-visible { outline: 4px auto -webkit-focus-ring-color; }
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: #CBD5E0;
+  margin-bottom: 1rem;
+}
 
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #242424; border-radius: 5px; }
-::-webkit-scrollbar-thumb { background-color: #646cff; border-radius: 5px; border: 2px solid #242424; }
-::-webkit-scrollbar-thumb:hover { background-color: #535bf2; }
+p {
+  font-size: 1rem;
+  color: #A0AEC0;
+  margin-bottom: 1rem;
+}
 
-@media (min-width: 768px) { .main-content { padding:0; } }
-@media (min-width: 1024px) { .main-content { padding: 0; } }
+a {
+  font-weight: 500;
+  color: #64748B;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-@media (prefers-color-scheme: light) {
-  html, body, .main-container {
-    background-color: #ffffff !important;
-    color: #213547;
-  }
-  html { scrollbar-color: #747bff #e0e0e0; }
-  a:hover { color: #747bff; }
-  button { background-color: #f9f9f9; }
-  ::-webkit-scrollbar-track { background: #f1f1f1; }
-  ::-webkit-scrollbar-thumb { background-color: #747bff; border-color: #f1f1f1; }
-  ::-webkit-scrollbar-thumb:hover { background-color: #535bf2; }
+a:hover {
+  color: #A3B18A;
+  text-decoration: underline;
+}
+
+button {
+  background-color: #64748B;
+  color: #E2E8F0;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #A3B18A;
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.4);
+}
+
+header {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.main-content {
+  flex-grow: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2D3748;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4A5568;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #64748B;
+}
+
+html, body, .main-container {
+  background-color: #1E293B !important;
+  color: #E2E8F0 !important;
+}
+
+a {
+  color: #64748B !important;
+}
+
+a:hover {
+  color: #A3B18A !important;
+}
+
+button {
+  background-color: #64748B !important;
+  color: #E2E8F0 !important;
+}
+
+button:hover {
+  background-color: #A3B18A !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #2D3748 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4A5568 !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #64748B !important;
+}
+/* Estilos para indicadores de foco */
+:focus {
+  outline: 2px solid var(--color-secundario); /* Un borde del color de acento */
+  outline-offset: 2px; /* Separación opcional del elemento */
+  box-shadow: 0 0 0 0.5rem rgba(var(--color-primario-rgb), 0.3); /* Un resplandor sutil */
+}
+
+
+:focus {
+  outline: 2px solid var(--color-secundario);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 0.2rem rgba(100, 116, 139, 0.5); /* Ejemplo con color primario */
+}
+
+/* Asegúrate de que los elementos con :focus no tengan un outline: none; que pueda haber sido añadido previamente. */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-secundario);
+  outline-offset: 2px;
+  /* Puedes personalizar el estilo según necesites */
 }

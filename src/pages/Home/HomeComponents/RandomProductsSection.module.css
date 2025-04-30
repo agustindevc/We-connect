@@ -1,0 +1,67 @@
+/* RandomProductsSection.module.css */
+.container {
+    padding: 50px 20px;
+    background-color: #64748B;
+    color: var(--color-neutro-oscuro);
+    text-align: center;
+  }
+  
+  .carouselWrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .slide {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    box-sizing: border-box;
+    padding: 20px 0;
+    width: 100%;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .button {
+    padding: 8px 16px;
+    background-color: #4A5568; /* Un tono gris azulado oscuro metálico */
+    color: var(--color-neutro-oscuro);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #64748B; /* Un tono gris azulado medio metálico al pasar el ratón */
+    color: var(--color-neutro-oscuro);
+  }
+  
+  .button:disabled {
+    background-color: #2D3748;
+    color: #A0AEC0;
+    cursor: not-allowed;
+  }
+  
+  .pagination {
+    color: #A0AEC0;
+  }
+  
+@media (max-width: 600px) {
+    .slide {
+      flex-direction: column; /* Apilar los productos en el carrusel en móviles */
+      align-items: center;
+    }
+  }

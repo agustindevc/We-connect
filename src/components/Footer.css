@@ -1,0 +1,86 @@
+.footer {
+    background-color: var(--color-neutro-claro); /* Fondo gris oscuro metálico */
+    color: var(--color-neutro-oscuro); /* Texto claro metálico */
+    padding: 3rem 2rem;
+    border-top: 1px solid #4A5568; /* Borde metálico sutil */
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-section {
+    text-align: left;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--color-neutro-oscuro);
+  }
+  
+  .footer-section p,
+  .footer-section li {
+    font-size: 0.9rem;
+    color: #A0AEC0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section a {
+    color: #64748B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section a:hover {
+    color: var(--color-secundario);
+    text-decoration: underline;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  
+  .social-icons img:hover {
+    opacity: 1;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #4A5568;
+    font-size: 0.8rem;
+    color: #A0AEC0;
+  }
+  /* Footer.css (Añadir al final) */
+@media (max-width: 600px) {
+    .footer-content {
+      grid-template-columns: 1fr; /* Apilar las secciones del footer en móviles */
+      text-align: center;
+    }
+  
+    .footer-section {
+      text-align: center;
+    }
+  
+    .social-icons {
+      justify-content: center;
+    }
+  }

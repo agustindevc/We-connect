@@ -1,0 +1,105 @@
+/* src/pages/Contact/Contact.css */
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: var(--color-fondo-principal);
+  color: rgb(0, 0, 0);
+}
+
+.contact-form {
+  background-color: var(--color-fondo-formulario);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.contact-form h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--color-primario);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-neutro-oscuro);
+  font-weight: bold; /* Esta línea ya estaba presente, asegurando que las etiquetas sean negritas */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #4A5568;
+  border-radius: 4px;
+  background-color: var(--color-fondo-input);
+  color: var(--color-neutro-claro);
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-button {
+  background-color: var(--color-primario);
+  color: var(--color-neutro-claro);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.contact-button:hover {
+  background-color: var(--color-secundario);
+}
+
+.contact-info {
+  text-align: center;
+  color: var(--color-neutro-claro);
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--color-primario);
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  margin-bottom: 8px;
+}
+
+.contact-info a {
+  color: var(--color-secundario);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}

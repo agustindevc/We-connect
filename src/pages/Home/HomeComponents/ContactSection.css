@@ -1,0 +1,75 @@
+.contact-section {
+    background-color: var(--color-fondo-oscuro); /* Fondo oscuro */
+    color: black; /* Texto claro */
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .contact-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-subtitle {
+    color: #A0AEC0;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--color-neutro-claro); /* Fondo gris oscuro para el formulario */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--color-neutro-oscuro);
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #30363D; /* Borde oscuro */
+    border-radius: 4px;
+    background-color: #0D1117; /* Fondo oscuro para los inputs */
+    color: var(--color-neutro-oscuro);
+    font-size: 1rem;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .contact-button {
+    background-color: var(--color-primario); /* Azul brillante */
+    color: var(--color-fondo-oscuro); /* Texto oscuro */
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: var(--color-secundario); /* Celeste */
+  }

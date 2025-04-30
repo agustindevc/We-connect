@@ -1,0 +1,26 @@
+.testimonials-section {
+    background-color: var(--color-neutro-claro); /* Nuevo fondo gris oscuro metálico */
+    color: var(--color-neutro-oscuro);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .testimonials-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--color-neutro-oscuro); /* Aseguramos que el título sea legible en el nuevo fondo */
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+ 
+@media (max-width: 650px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr; /* Apilar los testimonios en una sola columna en móviles */
+    }
+  }

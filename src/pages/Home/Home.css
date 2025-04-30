@@ -1,0 +1,124 @@
+/* src/pages/Home/Home.css */
+
+.main-container {
+    background-color: var(--color-fondo-oscuro); /* Fondo oscuro metálico para toda la página */
+    color: var(--color-neutro-claro); /* Color de texto claro metálico por defecto */
+    padding: 20px; /* Un poco de padding general */
+  }
+  
+  .hero-section {
+    padding: 80px 20px; /* Espacio vertical grande y padding horizontal */
+    text-align: center;
+    background-color: var(--color-fondo-formulario); /* Un fondo más claro para la sección principal */
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--color-primario); /* Color primario metálico para el título */
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-neutro-oscuro); /* Gris claro metálico para el subtítulo */
+    margin-bottom: 30px;
+  }
+  
+  .hero-button {
+    background-color: var(--color-primario);
+    color: var(--color-neutro-claro);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: var(--color-secundario);
+    transform: scale(1.05);
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--color-primario);
+    text-align: center;
+    padding: 20px; /* Añadido padding para separar del contenido adyacente */
+  }
+  
+  .products-section,
+  .services-section,
+  .testimonials-section,
+  .contact-section {
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    background-color: var(--color-fondo-formulario); /* Fondo claro para las secciones */
+    border-radius: 8px;
+  }
+  
+  /* Estilos para el listado de productos/servicios (ajusta según tu estructura) */
+  .item-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Diseño de cuadrícula adaptable */
+    gap: 20px;
+  }
+  
+  .item-card {
+    background-color: var(--color-fondo-oscuro-elemento); /* Fondo oscuro para las tarjetas de producto/servicio */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item-title {
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+  }
+  
+  .item-description {
+    color: var(--color-neutro-oscuro);
+  }
+  
+  /* Estilos para la sección de testimonios (ajusta según tu estructura) */
+  .testimonial-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+  }
+  
+  .testimonial-card {
+    background-color: var(--color-fondo-oscuro-elemento);
+    padding: 20px;
+    border-radius: 5px;
+    font-style: italic;
+    color: var(--color-neutro-claro);
+  }
+  
+  .testimonial-author {
+    text-align: right;
+    color: var(--color-primario);
+    margin-top: 10px;
+    font-style: normal;
+  }
+  
+  /* Estilos para la sección de contacto (si la tienes aquí también) */
+  .contact-info-home {
+    text-align: center;
+  }
+  
+  .contact-info-home h3 {
+    color: var(--color-primario);
+    margin-bottom: 10px;
+  }
+  
+  .contact-info-home p {
+    color: var(--color-neutro-oscuro);
+    margin-bottom: 15px;
+  }
+  
+ 

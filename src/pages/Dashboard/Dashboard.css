@@ -1,0 +1,37 @@
+/* src/pages/Dashboard/Dashboard.css */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #787d86; /* Un tono de gris oscuro más intenso para el fondo de la página */
+    color: var(--color-neutro-claro);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .add-product-button {
+    background-color: #b1b1f7; /* Un tono de gris más oscuro y discreto */
+    color: var(--color-texto-boton); /* Usando el color de texto del botón definido en theme */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Una sombra más sutil */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+  }
+  
+  .add-product-button:hover {
+    background-color: #848e9e; /* Un tono de gris más claro al hacer hover */
+    transform: translateY(-1px) scale(1.01); /* Un efecto hover más sutil */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligeramente más pronunciada al hover */
+  }

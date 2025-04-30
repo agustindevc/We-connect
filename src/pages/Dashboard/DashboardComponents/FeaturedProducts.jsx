@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import "./FeaturedProducts.css"; // Importa los estilos
 
 // Generador de productos simulados
 const generateProducts = () =>
@@ -37,14 +38,7 @@ const FeaturedProducts = ({ search }) => {
   );
 
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-        gap: "20px",
-        marginTop: "20px",
-      }}
-    >
+    <div className="featured-products-grid">
       {filtered.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

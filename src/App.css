@@ -1,43 +1,52 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
+/* src/App.css */
+
+:root {
+  --color-primario: #64748B;
+  --color-secundario: #A3B18A;
+  --color-neutro-claro: #2D3748;
+  --color-neutro-oscuro: #E2E8F0;
+  --color-blanco: #ffffff;
+  --color-fondo-oscuro: #1E293B;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background-color: var(--color-fondo-oscuro);
+  color: var(--color-neutro-oscuro);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.encabezado {
+  background-color: var(--color-neutro-claro);
+  padding: 20px;
+  border-bottom: 1px solid #4A5568;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.boton-principal {
+  background-color: var(--color-primario);
+  color: var(--color-neutro-oscuro);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.card {
-  padding: 2em;
+.boton-principal:hover {
+  background-color: var(--color-secundario);
 }
 
-.read-the-docs {
-  color: #888;
+.acento {
+  color: var(--color-secundario);
 }
 
-
+.tarjeta-producto {
+  background-color: var(--color-neutro-claro);
+  border: 1px solid #4A5568;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}

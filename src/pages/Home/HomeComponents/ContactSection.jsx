@@ -1,31 +1,30 @@
 import React from 'react';
+import './ContactSection.css'; // Creamos un archivo de estilos para esta sección
 
-const ContactSection = () => {
+function ContactSection() {
   return (
-    <section id="contact" style={{ backgroundColor: '#FFC107', color: '#000', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '50px 20px' }}>
-      <h2>Contacto</h2>
-      <p>¿Tienes alguna pregunta o quieres saber más sobre nuestra plataforma?</p>
-      <form style={{ width: '50%', display: 'flex', flexDirection: 'column', gap: '10px', flexWrap: 'wrap' }}>
-        <input 
-          type="email" 
-          placeholder="Tu correo electrónico" 
-          required 
-          style={{ padding: '10px', flex: '1 1 40%' }} 
-        />
-        <textarea 
-          placeholder="Tu mensaje" 
-          required 
-          style={{ padding: '10px', flex: '1 1 40%' }} 
-        />
-        <button 
-          type="submit" 
-          style={{ padding: '10px 20px', backgroundColor: '#000', color: '#FFF', flex: '1 1 100%' }}
-        >
-          Enviar
-        </button>
-      </form>
+    <section className="contact-section">
+      <h2 className="contact-title">¿Tienes alguna pregunta? ¡Contáctanos!</h2>
+      <p className="contact-subtitle">Nuestro equipo está listo para ayudarte en tu camino emprendedor.</p>
+      <div className="contact-form-wrapper">
+        <form className="contact-form">
+          <div className="form-group">
+            <label htmlFor="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tu mensaje"></textarea>
+          </div>
+          <button type="submit" className="contact-button">Enviar Mensaje</button>
+        </form>
+      </div>
     </section>
   );
-};
+}
 
 export default ContactSection;
