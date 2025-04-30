@@ -5,10 +5,10 @@ use weConnect_bd;
 CREATe TABLE usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
-    seudonimo VARCHAR(100), NOT NULL UNIQUE, -- seudonimo nombre de usuario
+    alias VARCHAR(100) NOT NULL UNIQUE, -- seudonimo nombre de usuario
     apellido VARCHAR(100),
     email VARCHAR(100) NOT NULL UNIQUE,
-    contraseña VARCHAR(255) NOT NULL,
+    contrasena VARCHAR(255) NOT NULL,
     telefono VARCHAR(15),
     area_trabajo VARCHAR(100),
     premium BOOLEAN DEFAULT FALSE,

@@ -5,8 +5,9 @@ import axios from 'axios';
 const Register = () => {
   const [formData, setFormData] = useState({
     nombre: '',
+    alias: '',
     email: '',
-    password: '',
+    contrasena: '',
     confirmPassword: ''
   });
 
@@ -21,23 +22,24 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (formData.password !== formData.confirmPassword) {
-      alert('Las contraseñas no coinciden');
-      return;
-    }
+    // if (formData.contrasena !== formData.confirmPassword) {
+    //   alert('Las contraseñas no coinciden');
+    //   return;
+    // }
 
     try {
       const response = await axios.post(
-        'https://tudominio.com/backend/register.php',
+        'https://mediumblue-sheep-674670.hostingersite.com/We-Connect/backend/register.php',
         {
           nombre: formData.nombre,
+          alias: formData.alias,
           email: formData.email,
-          password: formData.password
+          contrasena: formData.contrasena
         }
       );
       
       alert('Registro exitoso');
-      window.location.href = '/login';
+      window.location.href = './Login'; // Redirigir a la página de inicio de sesión
       
     } catch (error) {
       alert(error.response?.data?.error || 'Error en el registro');
@@ -94,6 +96,18 @@ const Register = () => {
           }}
         />
 
+        {/* Añado alias necesito que lo acomodes*/}
+        <label htmlFor="alias">Alias</label>
+        <input
+          type="text"
+          id="alias"
+          name="alias"
+          value={formData.alias}
+          onChange={handleChange}
+          required
+        />
+
+
         <label 
           htmlFor="email"
           style={{
@@ -120,7 +134,7 @@ const Register = () => {
         />
 
         <label 
-          htmlFor="password"
+          htmlFor="contrasena"
           style={{
             display: 'block',
             marginBottom: '0.5rem',
@@ -129,9 +143,9 @@ const Register = () => {
         >Contraseña</label>
         <input
           type="password"
-          id="password"
-          name="password"
-          value={formData.password}
+          id="contrasena"
+          name="contrasena"
+          value={formData.contrasena}
           onChange={handleChange}
           required
           style={{
@@ -144,7 +158,7 @@ const Register = () => {
           }}
         />
 
-        <label 
+        {/* <label 
           htmlFor="confirmPassword"
           style={{
             display: 'block',
@@ -166,8 +180,8 @@ const Register = () => {
             border: '1px solid #ddd',
             borderRadius: '4px',
             boxSizing: 'border-box'
-          }}
-        />
+          }} 
+        />*/}
 
         <button 
           type="submit"

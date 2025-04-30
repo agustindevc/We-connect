@@ -1,32 +1,38 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json");
-require 'config.php';
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST');
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require(__DIR__ . 'configHost.php');
+
+// Recibe y limpia los datos del formulario
 $data = json_decode(file_get_contents("php://input"), true);
+$nombre    = trim($data['nombre'] ?? '');
+$alias = trim($data['alias'] ?? '');
+$email     = trim($data['email'] ?? '');
+$contrasena = $data['contrasena'] ?? '';
 
-if (
-    empty($data['nombre']) ||
-    empty($data['seudonimo']) ||
-    empty($data['email']) ||
-    empty($data['contraseña'])
-) {
+// Validación básica
+if (!$nombre || !$alias || !$email || !$contrasena) {
     http_response_code(400);
-    echo json_encode(["error" => "Faltan datos obligatorios"]);
+    echo json_encode(["error" => "Error al registrar el patatón"]);
     exit;
 }
 
-$hashedPassword = password_hash($data['contraseña'], PASSWORD_DEFAULT);
+$hashedPassword = password_hash($contrasena, PASSWORD_DEFAULT);
 
-$sql = "INSERT INTO usuario (nombre, seudonimo, email, contraseña) VALUES (?, ?, ?, ?)";
-
-$stmt = $conn->prepare($sql);
+$sql = "INSERT INTO usuario (nombre, alias, email, contrasena) VALUES ('$nombre', '$alias', '$email', '$hashedPassword')";
+$stmt = $_conexion->prepare($sql);
 
 try {
     $stmt->execute([
-        $data['nombre'],
-        $data['seudonimo'],
-        $data['email'],
+        $nombre,
+        $alias,
+        $email,
         $hashedPassword
     ]);
     echo json_encode(["success" => "Usuario registrado correctamente"]);
