@@ -12,16 +12,16 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import ContactPage from "./pages/Contact/Contact"; // Asegúrate de que esta ruta sea correcta
+import ContactPage from "./pages/Contact/Contact";
 
 const App = () => {
   return (
-    <BrowserRouter basename="/We-connect">
+    <BrowserRouter> {/* Elimina la propiedad basename */}
       <div className="main-container">
-        <Header /> {/* Assume Header.jsx exists and has Header.css */}
+        <Header />
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} /> {/* Assume Home.jsx exists */}
+            <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/product" element={<Product />} />
@@ -31,8 +31,8 @@ const App = () => {
             <Route path="/contacto" element={<ContactPage />} />
           </Routes>
         </main>
-        <ScrollToTopButton /> {/* Assume ScrollToTopButton.jsx & .css */}
-        <Footer /> {/* Assume Footer.jsx & Footer.css */}
+        <ScrollToTopButton />
+        <Footer />
       </div>
     </BrowserRouter>
   );
